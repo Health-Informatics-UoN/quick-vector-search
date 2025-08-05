@@ -100,6 +100,14 @@ def _(
 
 
 @app.cell
+def _(mo, omop_connector):
+    n_embeddings = omop_connector.count_vectors()[0][0]
+
+    mo.md(f"Your database contains {n_embeddings} embeddings.")
+    return
+
+
+@app.cell
 def _(mo):
     search_term = mo.ui.text(value="Paracetamol", label="Search Term").form()
     search_term

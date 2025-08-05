@@ -94,6 +94,18 @@ class OmopConnector():
                         {"vocabulary_ids": vocabulary_ids, "domain_ids": domain_ids}
                         ).fetchall()
 
+    def count_vectors(self):
+        query = sql.SQL(
+                """
+                SELECT COUNT(DISTINCT(concept_id))
+                FROM {}
+                """
+                ).format(sql.Identifier(self.embeddings_table))
+        with pg.connect(self.uri) as conn:
+            conn.execute(sql.SQL("SET SEARCH_PATH to {}").format(sql.Identifier(self.db_schema)))
+            return conn.execute(query).fetchall()
+
+
     def get_all_vocabs(self):
         query = sql.SQL(
                 """

@@ -41,7 +41,6 @@ This tool provides a streamlined way to search through medical data using semant
 ## Configuration
 
 There are defaults for database connection details.
-If you need to change any of these, then create a `.env` file in the project root with your database connection details:
 
 ```env
 DB_HOST="localhost"
@@ -53,6 +52,8 @@ DB_SCHEMA="cdm"
 DB_VECTABLE="embeddings"
 EMBEDDINGS_MODEL="baai/bge-small-en-v1.5"
 ```
+
+If you need to change any of these to match your database, then create a `.env` file in the project root with your database connection details.
 
 ## Usage
 

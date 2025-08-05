@@ -1,0 +1,19 @@
+[project]
+name = "quick-vector-search"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "ipython>=9.4.0",
+    "marimo>=0.14.16",
+    "pgvector>=0.4.1",
+    "psycopg>=3.2.9",
+    "pydantic-settings>=2.10.1",
+    "ruff>=0.12.7",
+    "sentence-transformers>=5.0.0",
+    "transformers>=4.54.1",
+]
+
+[project.scripts]
+vsui = "quick_vector_search.run_vs_ui:main"

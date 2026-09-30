@@ -8,3 +8,5 @@ wheels/
 
 # Virtual environments
 .venv
+.DS_Store
+quick_vector_search/.DS_Store
